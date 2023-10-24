@@ -30,7 +30,16 @@ class tictactoe {
             Integer fill;
             HashMap<Integer, Integer> cross;
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Move: ");
+
+            if (turn % 2 == 1) {
+                fill = 2;
+                cross = cross_x;
+                System.out.println("X's move: ");
+            } else {
+                fill = 1;
+                cross = cross_o;
+                System.out.println("O's move: ");
+            }
 
             String input = scanner.nextLine();
 
@@ -40,14 +49,6 @@ class tictactoe {
             }
 
             String[] move = input.split("");
-
-            if (turn % 2 == 1) {
-                fill = 2;
-                cross = cross_x;
-            } else {
-                fill = 1;
-                cross = cross_o;
-            }
 
             Integer index;
 
